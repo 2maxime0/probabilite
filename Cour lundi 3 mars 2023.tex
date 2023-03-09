@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\title{Probabilités et Statistiques}
+\author{Maxime FROMONT}
+\maketitle
+
+jonathan.bosse@onera.fr
+
+\section{Rappels sur les probabilités et statistiques}
+
+Une variable aléatoire (v.a) est une fonction $X$ associée à une expérience aléatoire, qui associe à un événement $\omega$ de l'univers $\Omega$ une valeur $X(\omega) = x$.
+\begin{equation}
+\begin{split}
+X : \ & \Omega \longrightarrow \mathbb{R} \\
+& \omega \longmapsto X(\omega)
+\end{split}
+\end{equation}
+
+Exemple : lancé de deux pièces de monnaie :
+\[Omega = \{PP, PF, FF, FP\}\]
+Soit $X$ le nombre de "pile" obtenus
+\[X(\Omega) = \{0, 1, 2\}\]
+
+\subsection{Lois de probabilités à valeurs discrètes}
+
+La loi de probabilité d'une v.a est constituée de l'ensemble des couples $(x_i, p_i)$ où \[p_i = P_i(X = x_i)\]
+
+On a $P_i = 1$.
+
+On appelle la fonction de répartition d'une v.a la grandeur 
+\[F(x) = Pr(X \leqslant x) = \sum_{x_i \leqslant x} p_i\]
+
+On a si $a < b$, \[Pr(a \leqslant X \leqslant b) = F(b) - F(a)\]
+
+\subsection{Densité de probabilité d'une v.a continue}
+
+Soit $f$ une fonction positive, intégrable et telle que $\int_{-\infty}^{\infty} f(t) dt = 1$, alors $f$ est une fonction de densité.
+Une v.a $X$ a pour fonction de densité $f$ si
+\[Pr(a \leqslant X \leqslant b) = \int_{a}^{b} f(t) dt\]
+
+La fonction de répartition $F$ est définie par
+\[F(x) = Pr(X \leqslant x) = \int_{-\infty}^{x} f(t) dt\]
+On a toujours
+\[Pr(a \leqslant X \leqslant b) = F(b) - F(a)\]
+
+\subsection{Espérance mathématique \(E(X)\)}
+
+\begin{equation}
+\begin{split}
+E(X)  & = \sum_{i} x_i p_i \text{(cas discret)} \\
+& = \int_{-\infty}^{\infty} t f(t) dt \text{(cas continu)}
+\end{split}
+\end{equation}
+
+\subsection{Variance d'une v.a \(V(X)\)}
+
+\begin{equation}
+\begin{split}
+V(X) & = E((X - E(X))^2) = E(X^2) - E(X)^2 \\
+& = \sum_{i} x_i^2 p_i - (\sum_{i} x_i p_i)^2 \; \text{(cas discret)} \\
+& = \int t^2 f(t) dt - (\int t f(t) dt)^2 \; \text{(cas continu)}
+\end{split}
+\end{equation}
+
+\section{Lois de probabilités usuelles}
+
+\subsection{Loi de Bernoulli \(B(1, p)\)}
+
+On considère une expérience de type "succès" \((X = 1)\), "échec" \((X = 0)\).
+\
+
+\end{document}
